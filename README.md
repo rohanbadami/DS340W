@@ -10,12 +10,16 @@ open the notebook, select kernel -> restart and run all cells. all cells should 
 
 OUR RESULTS: 
 
-•	FinBERT sentiment is internally consistent and produces sensible per-ticker profiles.
-•	However, under this modeling setup (absolute daily returns with tree models), sentiment and novelty features do not provide meaningful incremental predictive power beyond price-based features.
-•	Both the placebo experiment and rolling backtest suggest that any performance gains from sentiment are tiny and not robust, which is the main substantive result.
-
-This repository contains one runnable notebook: reproduce_and_novelty.ipynb.
-It reproduces and extends results using processed datasets derived from the FNSPID dataset.
+•	We tested 10 stocks with daily prices and one news headline per day.
+    
+•	We used FinBERT to score each headline for positive or negative tone. 
+•	We built models to predict next-day volatility using: 
+    1.	price data only and 
+    2.	price data plus sentiment. 
+•	Both models gave almost the same accuracy.
+•	The sentiment features did not improve predictions in a meaningful way. 
+•	In short: price history explains volatility better than news tone in this dataset. 
+•	Sentiment matters a little, but not enough to change results.
 
 DATA
 
